@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="cs" xml:lang="cs"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../static/css/styl.css"
+          th:href="@{'/css/styl.css'}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;600&display=swap" rel="stylesheet">
+    <title>Harry Potter</title>
+</head>
+<body>
+    <div class="mainContent">
+    <h1>Tvůj výsledek</h1>
+    <p>Tvuj výsledek je <span th:text="${points}">x</span>/5 bodů.</p>
+
+    <a class="button" th:href="@{/finalResult/{sessionId}(sessionId=${sessionId})}" href="finalResult.html">Výsledek</a>
+        <span th:if="${level} != 4">
+            <a class="button" th:href="@{/{sesion_id}(sesion_id=${sessionId})}" href="index.html">Další level</a>
+        </span>
+    </div>
+</body>
+</html>

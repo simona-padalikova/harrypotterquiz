@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs" xml:lang="cs"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../static/css/styl.css"
+          th:href="'css/styl.css'"/>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;600&display=swap" rel="stylesheet">
+    <title>Harry Potter</title>
+</head>
+
+<body background-image="">
+    <div class="mainContent">
+    <h1>Harry Potter Kvíz</h1>
+    <form method="post" th:action="@{/{sessionId}(sessionId = ${sessionId})}">
+        <ul class="quesList" th:each="ques, iterator : ${question}">
+            <li>
+            <h3 th:text="${ques.getQuestion()}">Jak se jmenuje ředitel Bradavic?</h3>
+            <label class="inline-radio">
+                <input type="radio" th:name="'result[' + ${iterator.index} + ']'"
+                       th:value="${ques.getOption_a()} + '&' + ${ques.getQuesId()}"
+                       checked="checked">
+                <span class="inline-radio" th:text="${ques.getOption_a()}">Hagrid</span>
+            </label>
+            <label class="inline-radio">
+                <input type="radio" th:name="'result[' + ${iterator.index} + ']'"
+                       th:value="${ques.getOption_b()} + '&' + ${ques.getQuesId()}">
+                <span class="inline-radio" th:text="${ques.getOption_b()}">Brumbál</span>
+            </label>
+            <label class="inline-radio">
+                <input type="radio" th:name="'result[' + ${iterator.index} + ']'"
+                       th:value="${ques.getOption_c()} + '&' + ${ques.getQuesId()}">
+                <span class="inline-radio" th:text="${ques.getOption_c()}">Sirus Snape</span>
+            </label>
+            </li>
+        </ul>
+        <input class="button" type="submit" value="Vyhodnotit">
+    </form>
+    </div>
+</body>
+</html>

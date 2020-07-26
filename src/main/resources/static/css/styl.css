@@ -1,0 +1,48 @@
+.mainContent {
+    padding-left: 10%;
+    margin: auto;
+    width: 50%;
+    font-family: 'Grenze Gotisch', cursive;
+    border-radius: 5%;
+    opacity: 1;
+    background:#EAF4F8;
+    background: transparent\9;
+    background:rgba(0,0,0,0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#EAF4F8,endColorstr=#EAF4F8);
+    zoom: 1;
+    margin-bottom: 2em;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-image: url("css/background.jpg");
+    font-size: 1.2em;
+    color: blanchedalmond;
+}
+
+.quesList {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.quesList li {
+    margin-top: 20px;
+}
+
+.button {
+    cursor: default;
+    display: inline-block;
+    background: antiquewhite;
+    color: black;
+    padding: 0.5em 1em;
+    margin-left: 20%;
+    margin-bottom: 2em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10%;
+    font-family: 'Grenze Gotisch', cursive;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
